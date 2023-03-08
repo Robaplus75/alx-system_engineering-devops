@@ -1,2 +1,2 @@
 #!/bin/bash
-eicho | pwd
+echo $PWD
