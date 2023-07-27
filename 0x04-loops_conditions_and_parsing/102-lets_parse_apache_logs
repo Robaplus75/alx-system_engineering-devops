@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#dusokats tge vusutir uo along wit the https tstus code form the apache og file.
+
+awk '{print $1 " " $9}' apache-access.log
