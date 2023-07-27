@@ -1,1 +1,1 @@
-alx de-vops loops, condtions and parsing projects
+alx devops loops, condtions and parsing projects
