@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Displays 'Best School' 0 time
+
+num=0
+
+until [ $num -eq 10 ]
+do
+  echo "Best School"
+  ((num++))
+done
