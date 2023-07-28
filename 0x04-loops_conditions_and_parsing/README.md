@@ -1,1 +1,1 @@
-loops, condtions and parsing projectt
+loops, condtions and parsing projects
