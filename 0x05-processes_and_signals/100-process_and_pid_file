@@ -3,6 +3,7 @@
 
 trap "rm /var/run/myscript.pid && echo I hate the kill command" SIGTERM
 trap "rm /var/run/myscript.pid && echo Y U no love me?!" SIGINT
+trap "rm /var/run/myscript.pid && exit" SIGQUIT
 
 echo "$(pgrep -f 100-process_and_pid_file)" >> /var/run/myscript.pid
 
