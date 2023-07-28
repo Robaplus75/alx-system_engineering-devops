@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+# Displays its current process id
 
 echo $$
