@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Kills the task 4
 
-processid=$(pgrep -f ./4-to_infinity_and_beyond)
+processid=$(pgrep -f 4-to_infinity_and_beyond)
 kill $processid
