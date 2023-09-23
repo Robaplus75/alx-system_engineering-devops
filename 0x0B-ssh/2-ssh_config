@@ -1,0 +1,7 @@
+# SSH client configuration file
+
+Host *
+    HostName 54.237.8.234
+    SeverAliveInterval 120
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
