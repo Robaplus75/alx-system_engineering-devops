@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# installs the nginx and ajusts the header
+
+function setup_nginx(){
+    sudo apt-get update
+    sudo apt-get -y install nginx
+    sudo chown -R "$USER":"$USER" /var/www/html/
+    echo 'Hello World!' > /var/www/html/index.html
+    sudo chown -R "$USER":"$USER" /etc/nginx/sites-available/
+    server_conf="server {
+                listen 80 default_server;
+                listen [::]:80 default_server;
+                root /var/www/html;
+                index index.html index.htm index.nginx-debian.html;
+                server_name _;
+                add_header X-Served-By \$hostname;
+                location / {
+                    try_files \$uri \$uri/ =404;
+                }
+                location /redirect_me {
+                    rewrite ^ https://youtube.com;
+                }
+                error_page 404 /404.html;
+                location = /404.html {
+                    internal;
+                }
+            }"
+    echo -e "$server_conf" > /etc/nginx/sites-available/default
+    if [[ $(pgrep nginx) ]]; then
+        sudo nginx -s reload
+    else
+        sudo service nginx start
+    fi
+}
+setup_nginx;
