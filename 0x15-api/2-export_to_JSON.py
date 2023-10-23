@@ -12,7 +12,7 @@ if __name__ == "__main__":
     users = requests.get(
             f"https://jsonplaceholder.typicode.com/users/{argv[1]}").json()
     username = users.get('username')
-    
+
     user_id = int(argv[1])
 
     with open(f"{user_id}.json", "w") as jsonfile:
