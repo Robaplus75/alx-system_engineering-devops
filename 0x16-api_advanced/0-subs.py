@@ -14,8 +14,9 @@ headers = {
 
 def number_of_subscribers(subreddit: str):
     """returns the no of subscribers"""
-    api_res = get(f"https://www.reddit.com/r/{subreddit}/about.json",
-                   headers=headers)
+    api_res = get(
+            f"https://www.reddit.com/r/{subreddit}/about.json",
+            headers=headers)
     try:
         if 'error' in api_res.json().keys():
             return 0
