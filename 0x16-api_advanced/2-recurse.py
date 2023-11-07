@@ -8,7 +8,10 @@ after = None
 def recurse(subreddit, hot_list=[]):
     """the recursive func """
     global after
-    headers = {'User-Agent': 'user agent here'}
+    headers = {
+            "User-Agent": "Marvel's Agents of Shield/21",
+            "X-Forwared-For": "Phil J. Coulson"
+            }
     api_url = "https://www.reddit.com/r/{subreddit}/hot.json"
     params = {'after': after}
     api_res = requests.get(
