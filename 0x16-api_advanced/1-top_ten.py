@@ -16,8 +16,9 @@ def top_ten(subreddit: str) -> None:
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
 
     try:
-        api_res = get(url, headers=headers,
-                       allow_redirects=False).json()
+        api_res = get(
+                url, headers=headers,
+                allow_redirects=False).json()
         data = api_res['data']['children']
         [print(post['data']['title']) for post in data[:10]]
 
